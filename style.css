@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    border: 2px solid black;
+    background: rgb(158, 158, 158);
+    font-weight: bold;
+    margin: 30px;
+}
+
+.frame {
+    border: 2px solid black;
+    background: white;
+    font-weight: bold;
+    margin: 30px;
+    padding: 20px;
+}
+
+
+.quiz {
+    align-content: center;
+    text-align: center;
+    background: rgb(158, 158, 158);
+    border: 2px solid black;
+    margin: auto;
+    padding: 30px;
+}
+
+.highscores {
+    text-align: center;
+    padding: 20px;
+    top: 0;
+    left: 0;
+}
+
+.time {
+    text-align: right;
+    padding: 20px;
+    float: right;
+    top: 0;
+    right: 0;
+}
