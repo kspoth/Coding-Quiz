@@ -158,3 +158,69 @@ function questionThree() {
     }      
   }, true);
 };
+
+//Function that asks question four, provides an array of answers that are put through a for loop and attributed to buttons.
+function questionFour() {
+  answers.innerHTML = "";
+  question.textContent = "What is an example of a JavaScript library?";
+  //Create an array which creates buttons for each possible answer in a for loop
+  var fourAnswers = ["Jquery", "Bootstrap", "RAM", "Hard drive"];
+  for(var i = 0; i < fourAnswers.length; i++){
+    var button = document.createElement("button");
+    button.setAttribute("class", "btn btn-dark col-md-12");
+    button.setAttribute("data-index", i);
+    button.textContent = fourAnswers[i];
+    answers.appendChild(button);
+  };
+  //This is the listener that checks the users answers with and if/else. If the answer is incorrect the program subtracts 10 seconds from the timer.
+  answers.addEventListener("click", function _checkAnswer(event){
+    event.preventDefault();
+    var element = event.target.getAttribute("data-index");
+    event.stopPropagation();
+    console.log(element);
+    if(element === "0"){
+      alert("Correct!");
+      answers.removeEventListener("click", _checkAnswer, true);
+      questionFive();
+    }
+    else{
+      seconds = seconds - 10;
+      alert("Wrong!");
+      answers.removeEventListener("click", _checkAnswer, true);
+      questionFive();
+    }      
+  }, true);
+};
+
+//Function that asks question five, provides an array of answers that are put through a for loop and attributed to buttons.
+function questionFive() {
+  answers.innerHTML = "";
+  question.textContent = "What does DOM stand for?";
+  //Create an array which creates buttons for each possible answer in a for loop
+  var fiveAnswers = ["Different Option Method", "Document Object Model", "Direct Offer Module", "Double Operating Machine"];
+  for(var i = 0; i < fiveAnswers.length; i++){
+    var button = document.createElement("button");
+    button.setAttribute("class", "btn btn-dark col-md-12");
+    button.setAttribute("data-index", i);
+    button.textContent = fiveAnswers[i];
+    answers.appendChild(button);
+  };
+  //This is the listener that checks the users answers with and if/else. If the answer is incorrect the program subtracts 10 seconds from the timer.
+  answers.addEventListener("click", function _checkAnswer(event){
+    event.preventDefault();
+    var element = event.target.getAttribute("data-index");
+    event.stopPropagation();
+    console.log(element);
+    if(element === "1"){
+      alert("Correct!");
+      answers.removeEventListener("click", _checkAnswer, true);
+      quizEnd();
+    }
+    else{
+      seconds = seconds - 10;
+      alert("Wrong!");
+      answers.removeEventListener("click", _checkAnswer, true);
+      quizEnd();
+    }      
+  }, true);
+};
