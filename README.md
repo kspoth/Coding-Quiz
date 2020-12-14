@@ -1,6 +1,6 @@
 # Coding-Quiz
 
-Generates random passwords.
+Trivia quiz about coding.
 
 ## Project Description
 
@@ -28,4 +28,4 @@ Project repository link: (https://github.com/kspoth/Coding-Quiz)
 
 https://kspoth.github.io/Coding-Quiz/
 
-`https://github.com/kspoth`, `https://github.com/kspoth/Coding-Quiz`, `kspoth@richmond.edu`, `Password_Generator`, `project_description`
+`https://github.com/kspoth`, `https://github.com/kspoth/Coding-Quiz`, `kspoth@richmond.edu`, `Coding-Quiz`, `project_description`
