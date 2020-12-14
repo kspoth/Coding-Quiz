@@ -224,3 +224,52 @@ function questionFive() {
     }      
   }, true);
 };
+
+//This funstion ends the timer and allows the user to add their intials into the high score.
+function quizEnd() {
+  answers.innerHTML = "";
+  question.textContent = "Finished!";
+  welcome.textContent = "Enter your initials to record your score!";
+  var p = document.createElement("p");
+  p.setAttribute("class", "score");
+  p.textContent = "Score: " + seconds;
+  answers.appendChild(p);
+  var form = document.createElement("form");
+  answers.appendChild(form);
+  var input = document.createElement("input");
+  input.setAttribute("type", "text");
+  form.appendChild(input);
+  var submit = document.createElement("button");
+  submit.setAttribute("class", "btn btn-dark");
+  submit.textContent = "Submit!";
+  form.appendChild(submit);
+  submit.addEventListener("click", function(event){
+    event.preventDefault();
+    var inputText = input.value.trim();
+      if(inputText === ""){
+        return;
+      }
+    highScores.push(inputText + ": " + p.textContent);
+    var frameScore = document.createElement("ul");
+    answers.appendChild(frameScore);
+    var recordedScore = document.createElement("li");
+    recordedScore.textContent = inputText + ": " + p.textContent;
+    input.value = "";
+    frameScore.appendChild(recordedScore);
+    storeInput();
+    recordedScore();
+  })
+};
+
+//function to store information to local storage
+function storeInput(){
+  localStorage.setItem("highScores", JSON.stringify(highScores));
+}
+
+
+//event listener for the start button
+document.getElementById("start").addEventListener("click", function(event){
+    event.preventDefault();
+    timeClock();
+    questionOne();
+});
