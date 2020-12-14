@@ -261,7 +261,7 @@ function quizEnd() {
   })
 };
 
-//function to store information to local storage
+//function to store high scores
 function storeInput(){
   localStorage.setItem("highScores", JSON.stringify(highScores));
 }
